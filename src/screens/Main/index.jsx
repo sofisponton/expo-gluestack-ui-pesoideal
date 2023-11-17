@@ -1,4 +1,4 @@
-import { Box, Button, ButtonText, Center, FormControl, FormControlLabel, FormControlLabelText, HStack, Heading, Image, Input, InputField, Switch, Text } from "@gluestack-ui/themed";
+import { Box, Button, ButtonText, Center, FormControl, FormControlLabel, FormControlLabelText, HStack, Heading, Image, Input, InputField, Switch, Text, View } from "@gluestack-ui/themed";
 import { useState } from "react";
 
 import homem from "../../../assets/homem-icon.png"
@@ -36,11 +36,13 @@ export default function Main() {
         setSexo(false)
         setResultado("")
     }
+  
 
-    return <Box bg="$primary100" p="$2" h={"$3/4"} w={300} borderRadius={"$md"}>
+    return <View  style={{ backgroundColor: '#F0F2EF', padding: 12, borderRadius: 30 }}>
+        <Box p="$2" h={"$3/4"} w={300} borderRadius={"$md"} >
         <Center h={"$full"}>
-            <Heading>Peso Ideal</Heading>
-            <FormControl>
+            <Heading style={{paddingBottom: 25, color:'#5C5346', fontWeight: 'bold'}}>Peso Ideal</Heading>
+            <FormControl >
                 <FormControlLabel>
                     <FormControlLabelText>Peso</FormControlLabelText>
                 </FormControlLabel>
@@ -56,23 +58,29 @@ export default function Main() {
                 <FormControlLabel>
                     <FormControlLabelText>Sexo</FormControlLabelText>
                 </FormControlLabel>
-                <HStack w={"$full"} space="md" justifyContent="center" alignItems="center">
+                <HStack w={"$full"} space="md" justifyContent="center" alignItems="center" style={{paddingBottom: 17}}>
                     <FormControlLabelText>Homem</FormControlLabelText>
                     <Switch value={sexo} onValueChange={setSexo} />
                     <FormControlLabelText>Mulher</FormControlLabelText>
                 </HStack>
-                <Button onPress={calcularHandle}>
+                <Button onPress={calcularHandle} style={{backgroundColor: '#5C5346'}}>
                     <ButtonText>Calcular</ButtonText>
                 </Button>
-                <Button onPress={limparHandle}>
+                <Text></Text>
+                <Button onPress={limparHandle} style={{backgroundColor: '#5C5346'}}>
                     <ButtonText>Limpar</ButtonText>
                 </Button>
                 <Box justifyContent="space-between" alignItems="center" height={100} flexDirection="row">
                     <Text>Resultado</Text>
-                    <Text fontWeight="$bold">{resultado}</Text>
+                    <Text fontWeight="$bold" style={{color: '#5C5346'}}>{resultado}</Text>
                 </Box>
             </FormControl>
             <Image source={sexo ? mulher : homem} alt="imagem do tipo do sexo"/>
         </Center>
     </Box>
+    </View>
+
 }
+
+
+
