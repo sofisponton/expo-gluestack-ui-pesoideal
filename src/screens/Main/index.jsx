@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import homem from "../../../assets/homem-icon.png"
 import mulher from "../../../assets/mulher-icon.png"
+import fundo from "../../../assets/fundo-peso.png"
 
 
 export default function Main() {
@@ -41,7 +42,7 @@ export default function Main() {
     return <View  style={{ backgroundColor: '#F0F2EF', padding: 12, borderRadius: 30 }}>
         <Box p="$2" h={"$3/4"} w={300} borderRadius={"$md"} >
         <Center h={"$full"}>
-            <Heading style={{paddingBottom: 25, color:'#5C5346', fontWeight: 'bold'}}>Peso Ideal</Heading>
+            <Heading style={{paddingBottom: 7, color:'#5C5346', fontWeight: 'bold'}}>Peso Ideal</Heading>
             <FormControl >
                 <FormControlLabel>
                     <FormControlLabelText>Peso</FormControlLabelText>
